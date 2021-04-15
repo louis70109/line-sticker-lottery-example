@@ -1,0 +1,27 @@
+{
+  "name": "line-sticker-lottery-example",
+  "description": "LINE Sticker example",
+  "repository": "https://github.com/louis70109/line-sticker-lottery-example",
+  "keywords": [
+    "LINE",
+    "fastapi",
+    "python",
+    "static"
+  ],
+  "addons": ["heroku-postgresql:hobby-dev", "papertrail"],
+  "env": {
+    "FLASK_ENV": "API_ENV",
+    "LOTIFY_SWITCH": "ON",
+    "LOTIFY_TOKEN": "",
+    "LINE_CHANNEL_ACCESS_TOKEN": "",
+    "LINE_CHANNEL_SECRET": ""
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python.git"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
