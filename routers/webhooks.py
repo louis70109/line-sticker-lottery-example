@@ -316,7 +316,9 @@ def message_text(event):
 
 @handler.add(MessageEvent, message=StickerMessage)
 def sticker_text(event):
-    if 'brown' in event.message.keywords and os.getenv('LOTIFY_SWITCH') == 'ON':
+    if ('brown' in event.message.keywords or 'edward' in event.message.keywords) \
+            and os.getenv('LOTIFY_SWITCH') == 'ON':
+
         user = line_bot_api.get_profile(user_id=event.source.user_id)
         lotify = Client()
         lotify.send_message(
